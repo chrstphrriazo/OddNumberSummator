@@ -27,19 +27,20 @@ for (int i = 0; i < array.Length; i++)
         Console.Write("Enter an integer number " + (i + 1) + " : ");
         array[i] = Convert.ToInt32(Console.ReadLine());
     }
-    catch (Exception e)
-    {
+    catch (Exception e){
         retry = true;
-        Console.Clear();
+//        Console.Clear();
         Console.WriteLine("You did not enter an integer");
     }
-    if (retry)
-    {
-        i = 0;
+
+    if (retry){
+        i = i-1;
     }
 
 }
-
-Console.WriteLine(OddNumberSummation(array));
+for(int i = 0; i < array.Length; i++) {
+Console.Write(array[i]+"\t");
+}
+Console.WriteLine("\nThe summation of all odd numbers is : " + OddNumberSummation(array));
 
 
