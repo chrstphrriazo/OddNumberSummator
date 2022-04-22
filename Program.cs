@@ -15,7 +15,10 @@ static int OddNumberSummation(int[] x)
 
 }
 
-int[] array = new int[5];
+
+Console.WriteLine("How many number you want to input?");
+int inputNum = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[inputNum];
 bool retry = false;
 
 
@@ -35,6 +38,29 @@ for (int i = 0; i < array.Length; i++)
 
     if (retry){
         i = i-1;
+    }
+
+}
+
+while (true)
+{
+    Console.Write("Do you want to insert another number? input Y if Yes and N if no. ");
+    String answer = Console.ReadLine();
+
+    if (answer == "Y" || answer == "y")
+    {
+
+        Array.Resize<int>(ref array, array.Length+1);
+        Console.Write("Input an integer number " + array.Length + " : ");
+        array[array.Length-1] = Convert.ToInt32(Console.ReadLine());
+    }
+    else if (answer == "N" || answer == "n")
+    {
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Invalid Input.");
     }
 
 }
