@@ -1,32 +1,18 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-//This is the method for summating all odd number
-static int OddNumberSummation(int[] x)
+static void OddEvenNumberSummator(int[] array, ref int evenTotal, ref int oddTotal)
 {
-    int total = 0;
-    for (int i = 0; i < x.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        if (x[i] % 2 == 1)
+        if (array[i] % 2 == 1)
         {
-            total += x[i];
+            oddTotal += array[i];
+        }
+        else
+        {
+            evenTotal += array[i];
         }
     }
-    return total;
-
-}
-
-//This is the method for summating all even number
-static int EvenNumberSummation(int[] x)
-{
-    int total = 0;
-    for (int i = 0; i < x.Length; i++)
-    {
-        if (x[i] % 2 == 0)
-        {
-            total += x[i];
-        }
-    }
-    return total;
 
 }
 
@@ -82,7 +68,10 @@ while (true)
 for(int i = 0; i < array.Length; i++) {
 Console.Write(array[i]+"\t");
 }
-Console.WriteLine("\nThe summation of all odd numbers is : " + OddNumberSummation(array));
-Console.WriteLine("\nThe summation of all even numbers is : " + EvenNumberSummation(array));
+int evenTotal = 0;
+int oddTotal = 0;
+
+OddEvenNumberSummator(array, ref evenTotal, ref oddTotal);
+Console.WriteLine("\nThe sum of all odd numbers is : {0} \nThe sum off all even numbers is : {1}", oddTotal, evenTotal);
 
 
