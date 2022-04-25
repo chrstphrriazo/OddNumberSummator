@@ -83,6 +83,6 @@ for(int i = 0; i < array.Length; i++) {
 Console.Write(array[i]+"\t");
 }
 Console.WriteLine("\nThe summation of all odd numbers is : " + OddNumberSummation(array));
-Console.WriteLine("\nThe summation of all odd numbers is : " + EvenNumberSummation(array));
+Console.WriteLine("\nThe summation of all even numbers is : " + EvenNumberSummation(array));
 
 
